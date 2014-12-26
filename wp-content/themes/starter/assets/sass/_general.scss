@@ -1,0 +1,344 @@
+body {
+    font-family: "proxima-nova", sans-serif;
+}
+
+.smallprint {
+    @include font-size(1);
+    line-height: 14px;
+}
+
+.focus-wrapper {
+    width: 100%;
+    background: $black;
+}
+
+.focus {
+    position: relative;
+    max-width: 940px;
+    margin: 0 auto;
+    padding: 0 0 60px 0;
+    color: $white;
+    text-align: center;
+    text-transform: uppercase;
+    h1 {
+        @include font-size(2);
+        line-height: 24px;
+        letter-spacing: 5px;
+        max-width: 690px;
+        padding: 0 20px;
+        margin: 60px auto 40px;
+    }
+    p {
+        @include font-size(1);
+        max-width: 620px;
+        padding: 0 20px;
+        margin: 0 auto 24px auto;
+        letter-spacing: 2px;
+    }
+}
+
+.focus__label,
+.focus__expand {
+    width: 180px;
+    margin: 0 auto;
+    padding: 6px;
+    text-align: center;
+    font-weight: 600;
+    @include font-size(2);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    &--home {
+        background: $green;
+        color: $white;
+    }
+}
+
+.focus__expand {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    margin-left: -30px;
+    overflow: hidden;
+    background: $green;
+    width: 60px;
+    height: 60px;
+    padding: 0;
+    cursor: pointer;
+}
+
+.focus__expand:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60px;
+    height: 60px;
+    z-index: 1;
+    background: url("../img/expander.png") center center no-repeat;
+    -webkit-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
+}
+
+.focus__expand--expanded:before {
+    -webkit-transform: rotateZ(45deg);
+    transform: rotateZ(45deg);
+}
+
+.focus .hidden-content {
+    color: $white;
+    padding-bottom: 24px;
+}
+
+@media (min-width: 600px) {
+    .focus {
+        h1 {
+            @include font-size(2.4);
+            max-width: 730px;
+            line-height: 36px;
+            margin: 60px auto;
+        }
+        p {
+            @include font-size(1.2);
+            max-width: 620px;
+        }
+    }
+}
+
+@media (min-width: 800px) {
+    .focus {
+        h1 {
+            @include font-size(3);
+            max-width: 730px;
+            line-height: 42px;
+        }
+        p {
+            @include font-size(1.3);
+            max-width: 660px;
+        }
+    }
+}
+
+@media (min-width: 940px) {
+    .focus {
+        h1 {
+            @include font-size(3.7);
+            max-width: 800px;
+            line-height: 48px;
+        }
+        p {
+            @include font-size(1.5);
+            max-width: 660px;
+        }
+    }
+}
+
+.services-wrapper,
+.blog-wrapper {
+    background: $purple;
+}
+
+.contact-wrapper {
+    background: $green;
+}
+
+.services,
+.trainers,
+.blog,
+.testimonials,
+.contact,
+.connect {
+    color: $white;
+    text-align: center;
+    text-transform: uppercase;
+    padding-bottom: 30px;
+    &__label {
+        width: 180px;
+        margin: 0 auto;
+        padding: 6px;
+        text-align: center;
+        font-weight: 600;
+        @include font-size(2);
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        text-indent: 4px;
+        background: $black;
+        color: $white;
+    }
+    h1 {
+        color: $green;
+        @include font-size(4);
+        letter-spacing: 5px;
+        max-width: 690px;
+        margin: 60px auto 0;
+    }
+    p {
+        @include font-size(2);
+        letter-spacing: 5px;
+        line-height: 24px;
+        font-weight: bold;
+        max-width: 80%;
+        margin: 0 auto 60px;
+        padding: 0 20px;
+    }
+    a.button {
+        display: block;
+        width: 180px;
+        margin: 0 auto 30px;
+        background: $white;
+        padding: 6px;
+        border-radius: 8px;
+        color: $black;
+        text-decoration: none;
+        @include font-size(2);
+        letter-spacing: 4px;
+        text-indent: 4px;
+        font-weight: 600;
+    }
+}
+
+.trainers,
+.testimonials {
+    color: $black;
+    padding-bottom: 0;
+    h1 {
+        color: $purple;
+    }
+    p {
+        margin-bottom: 20px;
+    }
+    a.button {
+        margin-top: 36px;
+        background: $purple;
+        color: $white;
+    }
+}
+
+.trainers__profile-pic {
+    margin-bottom: 20px;
+}
+
+.contact {
+    h1 {
+        color: $black;
+    }
+    p {
+        margin: 0 auto;
+    }
+    a {
+        text-decoration: none;
+        color: $white;
+        &:hover {
+            color: $black;
+        }
+    }
+    .adr {
+        margin-top: 40px;
+        @include font-size(1.8);
+        letter-spacing: 3px;
+    }
+}
+
+#mapframe {
+    width: 100% !important;
+}
+
+#google-map {
+    height: 440px;
+    width: 100%;
+}
+
+.gm-style-iw * {
+    display: block;
+    width: 100%;
+}
+
+.gm-style-iw h4, .gm-style-iw p {
+    margin: 0;
+    padding: 0;
+}
+
+.gm-style-iw a {
+    color: #4272db;
+}
+
+.connect {
+    background: $black;
+    &__label {
+        background: $green;
+    }
+    .social {
+        margin-bottom: 36px;
+    }
+    .social-button {
+        margin: 15px;
+    }
+}
+
+@media (min-width: 600px) {
+    .services,
+    .trainers,
+    .blog,
+    .testimonials,
+    .contact,
+    .connect {
+        h1 {
+            @include font-size(4.2);
+            margin-bottom: 36px;
+        }
+        p {
+            @include font-size(2.4);
+            max-width: 500px;
+            line-height: 36px;
+        }
+    }
+    .contact .adr {
+        @include font-size(2.2);
+    }
+}
+
+@media (min-width: 800px) {
+    .services,
+    .trainers,
+    .blog,
+    .testimonials,
+    .contact,
+    .connect {
+        h1 {
+            @include font-size(5);
+        }
+        p {
+            @include font-size(3);
+            max-width: 640px;
+            line-height: 42px;
+        }
+    }
+    .contact .adr {
+        @include font-size(2.4);
+    }
+}
+
+@media (min-width: 940px) {
+    .services,
+    .trainers,
+    .blog,
+    .testimonials,
+    .contact,
+    .connect {
+        h1 {
+            @include font-size(6);
+        }
+        p {
+            @include font-size(3.7);
+            max-width: 740px;
+            line-height: 48px;
+        }
+    }
+    .contact .adr {
+        @include font-size(2.8);
+    }
+}
+
+.hfeed {
+    clear: both;
+    display: none;
+}

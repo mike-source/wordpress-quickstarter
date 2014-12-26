@@ -1,0 +1,12 @@
+// Rem Unit font sizes with relative fallback http:/seesparkbox.com/foundry/scss_rem_mixin_now_with_a_better_fallback  
+//  Usage: @include font-size(1, large);
+//
+@mixin font-size($decimal-size, $keyword: null) {
+    @if $keyword {
+        font-size: $keyword;
+    }
+    @else {
+        font-size: $decimal-size * 10px;
+    }
+    font-size: $decimal-size * 1rem;
+}

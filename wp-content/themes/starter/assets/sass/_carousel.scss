@@ -1,0 +1,35 @@
+/* Owl Carousel */
+
+.owl-theme .owl-controls .owl-buttons div {
+    position: absolute;
+    top: 50%;
+    width: 30px;
+    height: 45px;
+    margin-top: -23px;
+    background: url('../img/next-prev.png') top left no-repeat;
+    background-size: 200%;
+    text-indent: -500px;
+    overflow: hidden;
+    letter-spacing: -10px;
+}
+.testimonials.owl-theme .owl-controls .owl-buttons div {
+    background-image: url('../img/next-prev-green.png');
+}
+.owl-theme .owl-controls .owl-buttons .owl-prev {
+    left: 10px;
+}
+.owl-theme .owl-controls .owl-buttons .owl-next {
+    right: 10px;
+    background-position: right;
+}
+.owl-theme .owl-controls .owl-page span {
+    background: $white;
+}
+
+@media (min-width: 700px) {
+    .owl-theme .owl-controls .owl-buttons div {
+        width: 60px;
+        height: 90px;
+        margin-top: -45px;
+    }
+}

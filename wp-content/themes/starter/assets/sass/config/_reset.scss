@@ -1,0 +1,89 @@
+/*------------------------------------*\
+    Custom Reset Rules
+\*------------------------------------*/
+
+html {
+    font-size: 62.5%; // makes 1em = 10px
+}
+
+body {
+    font-size: 1.6em; // default font-size to 16px
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    -ms-text-size-adjust: none;
+    border-radius: 0;
+    box-shadow: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    font-family: Arial, Helvetica, sans-serif;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+a img {
+    border: none;
+}
+
+a {
+    outline: none;
+}
+
+address {
+    font-style: normal;
+}
+
+cite, em, i {
+    font-style: italic;
+}
+
+ins {
+    background: #ffc;
+    text-decoration: none;
+}
+
+blockquote {
+    font-style: italic;
+}
+
+blockquote cite, blockquote em, blockquote i {
+    font-style: normal;
+}
+
+pre {
+    background: #f7f7f7;
+    color: #222;
+}
+
+abbr, acronym {
+    border-bottom: 1px dotted #666;
+    cursor: help;
+}
+
+pre {
+    font-family: "Courier 10 Pitch", Courier, monospace;
+}
+
+code {
+    font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+}
+
+.screen-reader-text {
+    position: absolute;
+    left: -9000px;
+}

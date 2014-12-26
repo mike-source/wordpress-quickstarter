@@ -20,6 +20,9 @@ wp-content/plugins/*
 
 # No need to add the upgrade folder to the repo #
 wp-content/upgrade/*
+
+# Local language files #
+wp-content/languages/*
  
 # sitemaps #
 sitemap.xml

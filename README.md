@@ -40,3 +40,4 @@
 	
     Update this file with your local database details, 'wp-config-local.php' can not be included in the repository as it would override the live wp-config.php if deployed, it is excluded in .gitignore so needs to be re-added for each install.
 
+5. Navigate to the web root in a browser and run Wordpress setup.

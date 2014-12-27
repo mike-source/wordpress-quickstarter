@@ -199,7 +199,7 @@ $(document).ready(function() {
         var mapElement = document.getElementById('google-map');
         var map = new google.maps.Map(mapElement, mapOptions);
         var locations = [
-['Form MCR', 'undefined', 'undefined', 'info@formmcr.com', 'http://formmcr.com', 53.4792321, -2.248807, 'http://form.dev/wp-content/themes/form/assets/img/google-map-marker.png']
+['Example Company', 'undefined', 'undefined', 'info@example.dev', 'http://example.dev', 53.4792321, -2.248807, 'http://starter.dev/wp-content/themes/starter/assets/img/google-map-marker.png']
         ];
         for (i = 0; i < locations.length; i++) {
             if (locations[i][1] =='undefined'){ description ='';} else { description = locations[i][1];}

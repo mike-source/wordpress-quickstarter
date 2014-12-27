@@ -696,12 +696,11 @@ code {
 .page-header__nav--desktop ul {
   margin: 0;
   padding: 0;
-  margin-left: 17%;
-  width: 66%;
+  width: 100%;
   height: 100%;
 }
 .page-header__nav--desktop li {
-  width: 20%;
+  width: 25%;
   padding: 20px;
   text-align: center;
 }
@@ -766,7 +765,7 @@ code {
   font-size: 40px;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 640px) {
   .page-header {
     position: relative;
   }
@@ -953,7 +952,7 @@ main {
   }
 }
 body {
-  font-family: "proxima-nova", sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .smallprint {
@@ -974,13 +973,11 @@ body {
   padding: 0 0 60px 0;
   color: #fff;
   text-align: center;
-  text-transform: uppercase;
 }
 .focus h1 {
   font-size: 20px;
   font-size: 2rem;
   line-height: 24px;
-  letter-spacing: 5px;
   max-width: 690px;
   padding: 0 20px;
   margin: 60px auto 40px;
@@ -991,7 +988,15 @@ body {
   max-width: 620px;
   padding: 0 20px;
   margin: 0 auto 24px auto;
-  letter-spacing: 2px;
+}
+.focus a,
+.focus a:visited {
+  color: #d5d654;
+  text-decoration: none;
+}
+.focus a:hover,
+.focus a:visited:hover {
+  text-decoration: underline;
 }
 
 .focus__label,
@@ -1090,7 +1095,7 @@ body {
 }
 .services-wrapper,
 .blog-wrapper {
-  background: #572d41;
+  background: #2d5743;
 }
 
 .contact-wrapper {
@@ -1183,7 +1188,7 @@ body {
 }
 .trainers h1,
 .testimonials h1 {
-  color: #572d41;
+  color: #2d5743;
 }
 .trainers p,
 .testimonials p {
@@ -1192,7 +1197,7 @@ body {
 .trainers a.button,
 .testimonials a.button {
   margin-top: 36px;
-  background: #572d41;
+  background: #2d5743;
   color: #fff;
 }
 

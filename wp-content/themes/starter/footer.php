@@ -1,11 +1,10 @@
 <div class="footer-wrapper">
   <footer class="page-footer  block-group">
-    <div class="page-footer__left  page-footer__left--logo  block"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo2.png" height="120" width="72" alt="Form MCR" class="logo"></div>
+    <div class="page-footer__left  page-footer__left--logo  block"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo2.png" height="75" width="75" alt="Form MCR" class="logo"></div>
     <div class="page-footer__left  page-footer__left--nav  block">
       <ul class="nav  block  block-group">
           <li class="block"><a href="#">About</a></li>
           <li class="active  block"><a href="#">Services</a></li>
-          <li class="block"><a href="#">Testimonials</a></li>
           <li class="block"><a href="#">Blog</a></li>
           <li class="block"><a href="#">Contact</a></li>
       </ul>

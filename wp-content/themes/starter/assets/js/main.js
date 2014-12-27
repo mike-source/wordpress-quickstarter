@@ -5,13 +5,14 @@ $(document).ready(function() {
     - measure header height on page load 
     - update if window changes size
 */
+    var headerHeight;
     headerHeight = $('.page-header').height();
 
 /*
 
     Reload page if window is resized
 
-*/
+
     var origWindowHeight = $(window).height();
     var origWindowWidth = $(window).width();
     $(window).resize(function() {
@@ -23,6 +24,8 @@ $(document).ready(function() {
         //headerHeight = $('.page-header').height();
         //fixed = false;
     });
+*/
+
 
 /*
 
@@ -45,33 +48,6 @@ $(document).ready(function() {
     } // /fixedHeader
 
     $(window).scroll(fixedHeader); // repeatedly execute whenever page is scrolled
-
-/*
-
-    Modify anchor positions to account for fixed header
-
-*/
-    if(location.hash) {
-        $('html, body').scrollTop(-headerHeight);
-    }
-
-/*
-
-    Animate nav menu links scroll to anchor
-
-*/
-    $('.home .page-header__nav li a').on('click', function(event) {
-        event.preventDefault();
-
-        $('.page-header__nav li').removeClass('active');
-        $(this).parent().addClass('active');
-
-        var target = $(this).attr('href').substring(1);
-
-        $('html, body').animate({
-            scrollTop: $(target).offset().top - headerHeight
-        }, 800);
-    });
 
 /*
 

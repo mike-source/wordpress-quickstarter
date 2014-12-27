@@ -674,7 +674,6 @@ code {
     $THEME STYLES
 \*------------------------------------*/
 .page-header {
-  position: fixed;
   width: 100%;
   margin: 0 auto;
   z-index: 100;
@@ -685,7 +684,7 @@ code {
   position: absolute;
   top: 0;
   left: 0;
-  width: 130px;
+  width: 50px;
 }
 
 .page-header__nav--desktop {
@@ -701,24 +700,10 @@ code {
   width: 66%;
   height: 100%;
 }
-.page-header__nav--desktop li,
-.page-header__nav--desktop .members {
-  width: 16.66%;
-  padding: 22px 0;
-  font-weight: 600;
-  line-height: 24px;
-  font-size: 15px;
-  font-size: 1.5rem;
-  color: #000;
-  text-transform: uppercase;
+.page-header__nav--desktop li {
+  width: 20%;
+  padding: 20px;
   text-align: center;
-}
-.page-header__nav--desktop .members {
-  width: 17%;
-  background: #572d41;
-}
-.page-header__nav--desktop .members a {
-  color: #fff;
 }
 .page-header__nav--desktop a {
   color: #000;
@@ -744,7 +729,6 @@ code {
   background: #fff;
   color: #000;
   text-align: center;
-  text-transform: uppercase;
   padding: 24px;
 }
 .page-header__nav--mobile li.active a {
@@ -774,16 +758,12 @@ code {
   padding: 6px 12px;
 }
 .page-header__hamburger .open {
-  color: #fff;
+  color: #000;
 }
 .page-header__hamburger .close {
   display: none;
   color: #000;
   font-size: 40px;
-}
-
-.header-spacer {
-  display: none;
 }
 
 @media (min-width: 768px) {
@@ -813,49 +793,6 @@ code {
 
   .header-spacer {
     display: block;
-  }
-}
-@media (min-width: 900px) {
-  .page-header__nav ul {
-    width: 64%;
-  }
-}
-@media (min-width: 1000px) {
-  .page-header__logo {
-    width: 140px;
-  }
-
-  .page-header__nav {
-    height: 72px;
-  }
-  .page-header__nav ul {
-    width: 62%;
-  }
-  .page-header__nav li,
-  .page-header__nav .members {
-    padding: 24px 0;
-  }
-}
-@media (min-width: 1200px) {
-  .page-header__logo {
-    width: 169px;
-  }
-
-  .page-header__nav {
-    height: 88px;
-  }
-  .page-header__nav li,
-  .page-header__nav .members {
-    padding: 32px 0;
-    font-size: 17px;
-    font-size: 1.7rem;
-  }
-}
-@media (min-width: 1400px) {
-  .page-header__nav li,
-  .page-header__nav .members {
-    font-size: 20px;
-    font-size: 2rem;
   }
 }
 main {

@@ -29,25 +29,21 @@
         <nav class="page-header__nav  page-header__nav--desktop  block">
             <ul class="nav  block  block-group">
                 <li class="block"><a href="/#about">About</a></li>
-                <li class="block"><a href="/#services">Services</a></li>
-                <li class="block"><a href="/#team">Team</a></li>
+                <li class="active  block"><a href="/#services">Services</a></li>
+                <li class="block"><a href="/#testimonials">Testimonials</a></li>
                 <li class="block"><a href="/#blog">Blog</a></li>
                 <li class="block"><a href="/#contact">Contact</a></li>
-                <li class="block"><a href="/#social">Social</a></li>
             </ul>
-            <div class="members  block"><a href="#">Members</a></div>
         </nav>
         <img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo.png" alt="Form Logo" class="page-header__logo--mobile  block">
         <nav class="page-header__nav  page-header__nav--mobile  block">
             <ul class="nav  block  block-group">
                 <li class="block"><a href="/#about">About</a></li>
-                <li class="block"><a href="/#services">Services</a></li>
-                <li class="block"><a href="/#team">Team</a></li>
+                <li class="active  block"><a href="/#services">Services</a></li>
+                <li class="block"><a href="/#testimonials">Testimonials</a></li>
                 <li class="block"><a href="/#blog">Blog</a></li>
                 <li class="block"><a href="/#contact">Contact</a></li>
-                <li class="block"><a href="/#social">Social</a></li>
             </ul>
-            <div class="members  block"><a href="#">Members</a></div>
         </nav>
         <div class="hamburger  page-header__hamburger">
             <span class="open">☰</span>

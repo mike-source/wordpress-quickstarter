@@ -4,11 +4,10 @@
     <div class="page-footer__left  page-footer__left--nav  block">
       <ul class="nav  block  block-group">
           <li class="block"><a href="#">About</a></li>
-          <li class="active block"><a href="#">Services</a></li>
-          <li class="block"><a href="#">Team</a></li>
+          <li class="active  block"><a href="#">Services</a></li>
+          <li class="block"><a href="#">Testimonials</a></li>
           <li class="block"><a href="#">Blog</a></li>
           <li class="block"><a href="#">Contact</a></li>
-          <li class="block"><a href="#">Social</a></li>
       </ul>
       <!--<?php wp_nav_menu( array('menu' => 'Footer Navigation' )); ?>-->
     </div>
@@ -16,14 +15,14 @@
       <h6>Contact Information</h6>
       <div class="vcard smallprint">
         <address>
-          <div class="org">Form MCR</div>
+          <div class="org">Company Name</div>
           <div class="adr">
-            <div class="street-address">Elliot House <br> 151 Deansgate</div>
-            <span class="locality">Manchester</span> 
-            <span class="postal-code">M3 3WD</span>
+            <div class="street-address">Building Name <br> 151 Example St.</div>
+            <span class="locality">Locality</span> 
+            <span class="postal-code">P18 1AB</span>
           </div>
           <div class="tel">0161 000 000</div>
-          <a class="email" href="mailto:info@formmcr.com">info@formmcr.com</a>
+          <a class="email" href="mailto:info@example.dev">info@example.dev</a>
         </address>
       </div>
     </div>
@@ -36,7 +35,7 @@
       <p class="copyright">&copy; <?php bloginfo('name'); ?> <?php echo date('Y'); ?></p>
       <p>Registered in England NO. 01234567</p>
       <p>VAT Registration NO. 012 34 56 78</p>
-      <p>Registered Office: Deansgate, Manchester M12 3AB</p>
+      <p>Registered Office: Example St, City, P18 1AB</p>
     </div>
   </footer>
 </div>

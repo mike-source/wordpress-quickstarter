@@ -1,5 +1,4 @@
 .page-header {
-    position: fixed;
     width: 100%;
     margin: 0 auto;
     z-index: 100;
@@ -10,7 +9,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 130px;
+    width: 50px;
 }
 
 .page-header__nav--desktop {
@@ -25,23 +24,10 @@
         width: 66%;
         height: 100%;
     }
-    li,
-    .members {
-        width: 16.66%;
-        padding: 22px 0;
-        font-weight: 600;
-        line-height: 24px;
-        @include font-size(1.5);
-        color: $black;
-        text-transform: uppercase;
+    li {
+        width: 20%;
+        padding: 20px;
         text-align: center;
-    }
-    .members {
-        width: 17%;
-        background: $purple;
-        a {
-            color: $white;
-        }
     }
     a {
         color: $black;
@@ -69,7 +55,6 @@
     background: $white;
     color: $black;
     text-align: center;
-    text-transform: uppercase;
     padding: 24px;
     li.active {
         a {
@@ -101,17 +86,13 @@
     font-size: 30px;
     padding: 6px 12px;
     .open {
-        color: $white;
+        color: $black;
     }
     .close {
         display: none;
         color: $black;
         font-size: 40px;
     }
-}
-
-.header-spacer {
-    display: none;
 }
 
 @media (min-width: 768px) {
@@ -135,52 +116,5 @@
     }
     .header-spacer {
         display: block;
-    }
-}
-
-@media (min-width: 900px) {
-    .page-header__nav {
-        ul {
-            width: 64%;
-        }
-    }
-}
-
-@media (min-width: 1000px) {
-    .page-header__logo {
-        width: 140px;
-    }
-    .page-header__nav {
-        height: 72px;
-        ul {
-            width: 62%;
-        }
-        li,
-        .members {
-            padding: 24px 0;
-        }
-    }
-}
-
-@media (min-width: 1200px) {
-    .page-header__logo {
-        width: 169px;
-    }
-    .page-header__nav {
-        height: 88px;
-        li,
-        .members {
-            padding: 32px 0;
-            @include font-size(1.7);
-        }
-    }
-}
-
-@media (min-width: 1400px) {
-    .page-header__nav {
-        li,
-        .members {
-            @include font-size(2);
-        }
     }
 }

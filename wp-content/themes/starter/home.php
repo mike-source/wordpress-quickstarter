@@ -28,7 +28,7 @@ get_header(); ?>
             <div class="services__label  services__label--home">Services</div>
             <h1><?php the_title(); ?></h1>
             <p><?php the_excerpt(); ?></p>
-            <a href="#" class="button">Read More</a>
+            <a href="<?php the_permalink(); ?>" class="button">Read More</a>
         </div>
         <?php endwhile; wp_reset_query(); ?>
     </section>
@@ -57,35 +57,9 @@ get_header(); ?>
     </section>
 </div>
 
-<div id="contact" class="contact-wrapper">
-    <section class="contact  contact--home">
-        <div class="contact__label  contact__label--home">Contact</div>
-        <h1>Contact Us</h1>
-        <p class="tel">0161 000 000</p>
-        <a class="email" href="mailto:info@formmcr.com"><p>info@formmcr.com</p></a>
-        <div class="adr">
-            <div class="street-address">Elliot House, 151 Deansgate</div>
-            <span class="locality">Manchester</span>, <span class="postal-code">M3 3WD</span>
-        </div>
-    </section>
-</div> 
-
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
 <div class="map-wrapper">
     <div id='google-map'></div>
-</div>
-
-<div id="social" class="connect-wrapper">
-    <section class="connect  connect--home">
-        <div class="connect__label  connect__label--home">Social</div>
-        <h1>Connect With Us</h1>
-        <div class="social">
-            <span class="social-button"><a href="" class="facebook"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/faceyb.png" height="80" width="80" alt="Facebook"></a></span>
-            <span class="social-button"><a href="" class="twitter"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/twitty.png" height="80" width="80" alt="Twitter"></a></span>
-            <span class="social-button"><a href="" class="linked-in"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/instaG.png" height="80" width="80" alt="Linked In"></a></span>
-      </div>
-        <p>Sign up to receive updates:</p>
-    </section>
 </div>
 
 <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?><?php endwhile; ?>

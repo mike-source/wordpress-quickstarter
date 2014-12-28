@@ -30,16 +30,4 @@
                 <li class="block"><a href="/#contact">Contact</a></li>
             </ul>
         </nav>
-        <nav class="page-header__nav  page-header__nav--mobile  block">
-            <ul class="nav  block  block-group">
-                <li class="block"><a href="/#about">About</a></li>
-                <li class="active  block"><a href="/#services">Services</a></li>
-                <li class="block"><a href="/#blog">Blog</a></li>
-                <li class="block"><a href="/#contact">Contact</a></li>
-            </ul>
-        </nav>
-        <div class="hamburger  page-header__hamburger">
-            <span class="open">☰</span>
-            <span class="close">x</span>
-        </div>
     </header><!-- #header -->

@@ -137,21 +137,11 @@ body {
     }
 }
 
-.services-wrapper,
-.blog-wrapper {
+.services-wrapper {
     background: $dark-green;
 }
 
-.contact-wrapper {
-    background: $green;
-}
-
-.services,
-.trainers,
-.blog,
-.testimonials,
-.contact,
-.connect {
+.services {
     color: $white;
     text-align: center;
     text-transform: uppercase;
@@ -201,91 +191,8 @@ body {
     }
 }
 
-.trainers,
-.testimonials {
-    color: $black;
-    padding-bottom: 0;
-    h1 {
-        color: $dark-green;
-    }
-    p {
-        margin-bottom: 20px;
-    }
-    a.button {
-        margin-top: 36px;
-        background: $dark-green;
-        color: $white;
-    }
-}
-
-.trainers__profile-pic {
-    margin-bottom: 20px;
-}
-
-.contact {
-    h1 {
-        color: $black;
-    }
-    p {
-        margin: 0 auto;
-    }
-    a {
-        text-decoration: none;
-        color: $white;
-        &:hover {
-            color: $black;
-        }
-    }
-    .adr {
-        margin-top: 40px;
-        @include font-size(1.8);
-        letter-spacing: 3px;
-    }
-}
-
-#mapframe {
-    width: 100% !important;
-}
-
-#google-map {
-    height: 440px;
-    width: 100%;
-}
-
-.gm-style-iw * {
-    display: block;
-    width: 100%;
-}
-
-.gm-style-iw h4, .gm-style-iw p {
-    margin: 0;
-    padding: 0;
-}
-
-.gm-style-iw a {
-    color: #4272db;
-}
-
-.connect {
-    background: $black;
-    &__label {
-        background: $green;
-    }
-    .social {
-        margin-bottom: 36px;
-    }
-    .social-button {
-        margin: 15px;
-    }
-}
-
 @media (min-width: 600px) {
-    .services,
-    .trainers,
-    .blog,
-    .testimonials,
-    .contact,
-    .connect {
+    .services {
         h1 {
             @include font-size(4.2);
             margin-bottom: 36px;
@@ -296,18 +203,10 @@ body {
             line-height: 36px;
         }
     }
-    .contact .adr {
-        @include font-size(2.2);
-    }
 }
 
 @media (min-width: 800px) {
-    .services,
-    .trainers,
-    .blog,
-    .testimonials,
-    .contact,
-    .connect {
+    .services {
         h1 {
             @include font-size(5);
         }
@@ -317,18 +216,10 @@ body {
             line-height: 42px;
         }
     }
-    .contact .adr {
-        @include font-size(2.4);
-    }
 }
 
 @media (min-width: 940px) {
-    .services,
-    .trainers,
-    .blog,
-    .testimonials,
-    .contact,
-    .connect {
+    .services {
         h1 {
             @include font-size(6);
         }
@@ -338,12 +229,4 @@ body {
             line-height: 48px;
         }
     }
-    .contact .adr {
-        @include font-size(2.8);
-    }
-}
-
-.hfeed {
-    clear: both;
-    display: none;
 }

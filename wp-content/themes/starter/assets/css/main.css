@@ -674,21 +674,14 @@ code {
     $THEME STYLES
 \*------------------------------------*/
 .page-header {
+  position: relative;
   width: 100%;
   margin: 0 auto;
   z-index: 100;
 }
 
-.page-header__logo {
-  display: none;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 50px;
-}
-
 .page-header__nav--desktop {
-  display: none;
+  display: block;
   width: 100%;
   height: 68px;
   background: #fff;
@@ -716,84 +709,6 @@ code {
   color: #d5d654;
 }
 
-.page-header__logo--mobile {
-  position: relative;
-  height: 75px;
-  width: auto;
-  margin-bottom: -100%;
-  z-index: 10;
-}
-
-.page-header__nav--mobile {
-  background: #fff;
-  color: #000;
-  text-align: center;
-  padding: 24px;
-}
-.page-header__nav--mobile li.active a {
-  background: #000;
-  color: #fff;
-}
-.page-header__nav--mobile a {
-  display: block;
-  width: 150px;
-  margin: 0 auto;
-  padding: 6px 0;
-  color: #000;
-  text-decoration: none;
-}
-.page-header__nav--mobile a:hover, .page-header__nav--mobile a:focus {
-  color: #eee;
-  text-decoration: none;
-}
-
-.page-header__hamburger {
-  position: absolute;
-  top: 0;
-  right: 0;
-  z-index: 10;
-  cursor: pointer;
-  font-size: 30px;
-  padding: 6px 12px;
-}
-.page-header__hamburger .open {
-  color: #000;
-}
-.page-header__hamburger .close {
-  display: none;
-  color: #000;
-  font-size: 40px;
-}
-
-@media (min-width: 640px) {
-  .page-header {
-    position: relative;
-  }
-
-  .page-header__logo {
-    display: block;
-  }
-
-  .page-header__nav {
-    display: block;
-  }
-
-  .page-header__logo--mobile {
-    display: none;
-  }
-
-  .page-header__nav--mobile {
-    display: none;
-  }
-
-  .page-header__hamburger {
-    display: none;
-  }
-
-  .header-spacer {
-    display: block;
-  }
-}
 main {
   height: 200px;
 }
@@ -1093,32 +1008,17 @@ body {
     max-width: 660px;
   }
 }
-.services-wrapper,
-.blog-wrapper {
+.services-wrapper {
   background: #2d5743;
 }
 
-.contact-wrapper {
-  background: #d5d654;
-}
-
-.services,
-.trainers,
-.blog,
-.testimonials,
-.contact,
-.connect {
+.services {
   color: #fff;
   text-align: center;
   text-transform: uppercase;
   padding-bottom: 30px;
 }
-.services__label,
-.trainers__label,
-.blog__label,
-.testimonials__label,
-.contact__label,
-.connect__label {
+.services__label {
   width: 180px;
   margin: 0 auto;
   padding: 6px;
@@ -1132,12 +1032,7 @@ body {
   background: #000;
   color: #fff;
 }
-.services h1,
-.trainers h1,
-.blog h1,
-.testimonials h1,
-.contact h1,
-.connect h1 {
+.services h1 {
   color: #d5d654;
   font-size: 40px;
   font-size: 4rem;
@@ -1145,12 +1040,7 @@ body {
   max-width: 690px;
   margin: 60px auto 0;
 }
-.services p,
-.trainers p,
-.blog p,
-.testimonials p,
-.contact p,
-.connect p {
+.services p {
   font-size: 20px;
   font-size: 2rem;
   letter-spacing: 5px;
@@ -1160,12 +1050,7 @@ body {
   margin: 0 auto 60px;
   padding: 0 20px;
 }
-.services a.button,
-.trainers a.button,
-.blog a.button,
-.testimonials a.button,
-.contact a.button,
-.connect a.button {
+.services a.button {
   display: block;
   width: 180px;
   margin: 0 auto 30px;
@@ -1181,50 +1066,43 @@ body {
   font-weight: 600;
 }
 
-.trainers,
-.testimonials {
-  color: #000;
-  padding-bottom: 0;
+@media (min-width: 600px) {
+  .services h1 {
+    font-size: 42px;
+    font-size: 4.2rem;
+    margin-bottom: 36px;
+  }
+  .services p {
+    font-size: 24px;
+    font-size: 2.4rem;
+    max-width: 500px;
+    line-height: 36px;
+  }
 }
-.trainers h1,
-.testimonials h1 {
-  color: #2d5743;
+@media (min-width: 800px) {
+  .services h1 {
+    font-size: 50px;
+    font-size: 5rem;
+  }
+  .services p {
+    font-size: 30px;
+    font-size: 3rem;
+    max-width: 640px;
+    line-height: 42px;
+  }
 }
-.trainers p,
-.testimonials p {
-  margin-bottom: 20px;
+@media (min-width: 940px) {
+  .services h1 {
+    font-size: 60px;
+    font-size: 6rem;
+  }
+  .services p {
+    font-size: 37px;
+    font-size: 3.7rem;
+    max-width: 740px;
+    line-height: 48px;
+  }
 }
-.trainers a.button,
-.testimonials a.button {
-  margin-top: 36px;
-  background: #2d5743;
-  color: #fff;
-}
-
-.trainers__profile-pic {
-  margin-bottom: 20px;
-}
-
-.contact h1 {
-  color: #000;
-}
-.contact p {
-  margin: 0 auto;
-}
-.contact a {
-  text-decoration: none;
-  color: #fff;
-}
-.contact a:hover {
-  color: #000;
-}
-.contact .adr {
-  margin-top: 40px;
-  font-size: 18px;
-  font-size: 1.8rem;
-  letter-spacing: 3px;
-}
-
 #mapframe {
   width: 100% !important;
 }
@@ -1246,106 +1124,6 @@ body {
 
 .gm-style-iw a {
   color: #4272db;
-}
-
-.connect {
-  background: #000;
-}
-.connect__label {
-  background: #d5d654;
-}
-.connect .social {
-  margin-bottom: 36px;
-}
-.connect .social-button {
-  margin: 15px;
-}
-
-@media (min-width: 600px) {
-  .services h1,
-  .trainers h1,
-  .blog h1,
-  .testimonials h1,
-  .contact h1,
-  .connect h1 {
-    font-size: 42px;
-    font-size: 4.2rem;
-    margin-bottom: 36px;
-  }
-  .services p,
-  .trainers p,
-  .blog p,
-  .testimonials p,
-  .contact p,
-  .connect p {
-    font-size: 24px;
-    font-size: 2.4rem;
-    max-width: 500px;
-    line-height: 36px;
-  }
-
-  .contact .adr {
-    font-size: 22px;
-    font-size: 2.2rem;
-  }
-}
-@media (min-width: 800px) {
-  .services h1,
-  .trainers h1,
-  .blog h1,
-  .testimonials h1,
-  .contact h1,
-  .connect h1 {
-    font-size: 50px;
-    font-size: 5rem;
-  }
-  .services p,
-  .trainers p,
-  .blog p,
-  .testimonials p,
-  .contact p,
-  .connect p {
-    font-size: 30px;
-    font-size: 3rem;
-    max-width: 640px;
-    line-height: 42px;
-  }
-
-  .contact .adr {
-    font-size: 24px;
-    font-size: 2.4rem;
-  }
-}
-@media (min-width: 940px) {
-  .services h1,
-  .trainers h1,
-  .blog h1,
-  .testimonials h1,
-  .contact h1,
-  .connect h1 {
-    font-size: 60px;
-    font-size: 6rem;
-  }
-  .services p,
-  .trainers p,
-  .blog p,
-  .testimonials p,
-  .contact p,
-  .connect p {
-    font-size: 37px;
-    font-size: 3.7rem;
-    max-width: 740px;
-    line-height: 48px;
-  }
-
-  .contact .adr {
-    font-size: 28px;
-    font-size: 2.8rem;
-  }
-}
-.hfeed {
-  clear: both;
-  display: none;
 }
 
 /* Owl Carousel */

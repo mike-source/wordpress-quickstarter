@@ -3,10 +3,13 @@
 1. Clone this repo directly into the web directory (public_html, httpdocs, etc.) of your site:
         
         git clone https://github.com/mike-source/wordpress-starter.git .
+        
+2. Navigate to /wordpress/ subdirectory in a terminal (or a Git GUI app) and checkout desired Wordpress branch (Wordpress is added as a git submodule, but needs to be checked out manually until git hook is made).
+
 
 2. Create databases for live, staging, development as required.
 
-   From command line:
+   From linux command line:
 
         mysql -u root -p
         
@@ -41,3 +44,7 @@
     Update this file with your local database details, 'wp-config-local.php' can not be included in the repository as it would override the live wp-config.php if deployed, it is excluded in .gitignore so needs to be re-added for each install.
 
 5. Navigate to the web root in a browser and run Wordpress setup.
+
+6. Rename theme folder and give theme a name in style.css.
+
+7. Make a page and set template to 'Home Page', then in Settings > Reading, set Front Page displays = static page, and set this page as front page. 

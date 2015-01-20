@@ -1,6 +1,6 @@
 #Setup#
 
-1. Clone this repo directly into the web directory (public_html, httpdocs, etc.) of your site:
+1. Clone this repo directly into the live web directory (public_html, httpdocs, etc.) of your environment:
         
         git clone https://github.com/mike-source/wordpress-starter.git .
 
@@ -41,3 +41,7 @@
     Update this file with your local database details, 'wp-config-local.php' can not be included in the repository as it would override the live wp-config.php if deployed, it is excluded in .gitignore so needs to be re-added for each install.
 
 5. Navigate to the web root in a browser and run Wordpress setup.
+
+6. Rename 'starter' theme to whatever you require, enable it in wordpress admin, set landing page to be a static page and on that page choose 'Home Page' template.
+
+7. Develop.

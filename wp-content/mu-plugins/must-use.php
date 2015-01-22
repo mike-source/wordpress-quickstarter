@@ -26,21 +26,6 @@ Author URI: http://thisismc2.com
         'menu_icon' => 'dashicons-exerpt-view'
       )
     );
-    register_post_type( 'mc2-trainer',
-      array(
-        'labels' => array(
-          'name' => __( 'Trainers' ),
-          'singular_name' => __( 'Trainer' )
-        ),
-        'supports' => array('title','editor','revisions','thumbnail'),
-        'rewrite' => array(
-          'slug' => 'trainers'
-          ),
-        'public' => true,
-        'has_archive' => true,
-        'menu_icon' => 'dashicons-groups'
-      )
-    );
     register_post_type( 'mc2-testimonial',
       array(
         'labels' => array(

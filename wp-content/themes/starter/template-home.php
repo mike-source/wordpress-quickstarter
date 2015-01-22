@@ -32,9 +32,4 @@ get_header(); ?>
     </section>
 </div>
 
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
-<div class="map-wrapper">
-    <div id='google-map'></div>
-</div>
-
 <?php get_footer(); ?>

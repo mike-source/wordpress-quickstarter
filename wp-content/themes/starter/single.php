@@ -17,8 +17,8 @@ get_header(); ?>
 </div><!-- #post-## -->
 
 <div class="navigation">
-    <div class="prev"><?php next_post_link( __( 'Older stores', 'twentyten' ) ); ?></div>
-    <div class="next"><?php previous_post_link( __( 'Newer stories', 'twentyten' ) ); ?></div>
+    <div class="prev">Older stores</div>
+    <div class="next">Newer stories</div>
 </div><!-- #nav-below -->
 
 <?php endwhile; ?>

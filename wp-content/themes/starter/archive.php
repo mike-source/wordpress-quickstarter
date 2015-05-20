@@ -5,19 +5,13 @@
 
 get_header(); ?>
 
-<?php if ( have_posts() ) the_post();?>
+<div class="posts">
+    <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
+    <div id="<?php echo $post->post_name; ?>" class="posts__post">
+        <h1><?php the_title(); ?></h1>
+        <?php the_content(); ?>
+    </div>
+    <?php endwhile; ?>
+</div>
 
-    <h1>
-    <?php if ( is_day() ) : ?>
-        <?php printf( __( '<span>%s</span>', 'twentyten' ), get_the_date() ); ?>
-    <?php elseif ( is_month() ) : ?>
-        <?php printf( __( '<span>%s</span>', 'twentyten' ), get_the_date('F Y') ); ?>
-    <?php elseif ( is_year() ) : ?>
-        <?php printf( __( '<span>%s</span>', 'twentyten' ), get_the_date('Y') ); ?>
-    <?php else : ?>
-        <?php _e( 'Archives', 'twentyten' ); ?>
-    <?php endif; ?>
-    </h1>
-
-<?php rewind_posts(); get_template_part( 'loop', 'archive' );?>
 <?php get_footer(); ?>

@@ -1,10 +1,4 @@
 <?php
-/**
- *
- * @package WordPress
- * @subpackage Form
- * @since Form 1.0
- */
 
 /**
  * Configuration values
@@ -59,7 +53,7 @@ if (GOOGLE_ANALYTICS_ID && (WP_ENV !== 'production' || !current_user_can('manage
  * 3. /theme/assets/js/scripts.js (in footer)
  *
  */
-function scripts() {
+function mc2_scripts() {
 
     $assets = array(
       'main-css'  => '/assets/css/main.css?' . filemtime( get_template_directory() . '/assets/css/main.css'),
@@ -71,6 +65,7 @@ function scripts() {
     );
 
   // Enqueue Style Sheets:
+  wp_enqueue_style('font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css', false, null);
   wp_enqueue_style('owl-carousel', get_template_directory_uri() . $assets['owl-css'], false, null);
   wp_enqueue_style('owl-theme', get_template_directory_uri() . $assets['owl-theme'], false, null);
   wp_enqueue_style('main', get_template_directory_uri() . $assets['main-css'], false, null);
@@ -95,7 +90,7 @@ function scripts() {
   wp_enqueue_script('jquery');
   wp_enqueue_script('mc2_js', get_template_directory_uri() . $assets['mc2-js'], array(), null, true);
 }
-add_action('wp_enqueue_scripts', 'scripts', 100);
+add_action('wp_enqueue_scripts', 'mc2_scripts', 100);
 
 // http://wordpress.stackexchange.com/a/12450
 function jquery_local_fallback($src, $handle = null) {
@@ -117,70 +112,30 @@ add_action('wp_head', 'jquery_local_fallback');
 
 /**
  * Theme Setup
- * - An ID has been defined in config.php
- * - You're not logged in as an administrator
- *
- * Google Analytics snippet from HTML5 Boilerplate
- *
- * Cookie domain is 'auto' configured. See: http://goo.gl/VUCHKM
  */
+function mc2_theme_setup() {
+  // Enable plugins to manage the document title
+  // http://codex.wordpress.org/Function_Reference/add_theme_support#Title_Tag
+  add_theme_support('title-tag');
 
-add_action( 'after_setup_theme', 'theme_setup' );
-
-if ( ! function_exists( 'theme_setup' ) ):
-function theme_setup() {
-
-  // This theme styles the visual editor
-  // add_editor_style();
-
-  // This theme uses post thumbnails
-  add_theme_support( 'post-thumbnails' );
+  // Add post thumbnails
+  // http://codex.wordpress.org/Post_Thumbnails
+  // http://codex.wordpress.org/Function_Reference/set_post_thumbnail_size
+  // http://codex.wordpress.org/Function_Reference/add_image_size
+  add_theme_support('post-thumbnails');
 
   // Add default posts and comments RSS feed links to head
-  // add_theme_support( 'automatic-feed-links' );
-
-  // Register navigation
-  register_nav_menus( array(
-    'primary' => __( 'Primary Navigation', 'twentyten' ),
-  ) );
+  add_theme_support('automatic-feed-links');
 
   // Convert Comments / Gallery & Search into HTML5
-  add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption' ) );
+  // http://codex.wordpress.org/Function_Reference/add_theme_support#HTML5
+  add_theme_support('html5',array('comment-list','comment-form','search-form','gallery','caption'));
 
-  // We'll be using post thumbnails for custom header images on posts and pages.
-  // set_post_thumbnail_size( HEADER_IMAGE_WIDTH, HEADER_IMAGE_HEIGHT, true );
-
-  // Custom post types
-  add_action( 'init', 'create_post_type' );
-  function create_post_type() {
-    register_post_type( 'form_service',
-      array(
-        'labels' => array(
-          'name' => __( 'Services' ),
-          'singular_name' => __( 'Service' )
-        ),
-        'supports' => array('title','excerpt','editor','revisions'),
-        'rewrite' => array(
-          'slug' => 'services'
-          ),
-        'public' => true,
-        'has_archive' => true,
-        'menu_icon' => 'dashicons-exerpt-view'
-      )
-    );
-    register_post_type( 'form_testimonial',
-      array(
-        'labels' => array(
-          'name' => __( 'Testimonials' ),
-          'singular_name' => __( 'Testimonial' )
-        ),
-        'supports' => array('title','excerpt','editor','revisions','thumbnail'),
-        'public' => true,
-        'has_archive' => true,
-        'menu_icon' => 'dashicons-testimonial'
-      )
-    );
-  }
-
+  // Register wp_nav_menu() menus
+  // http://codex.wordpress.org/Function_Reference/register_nav_menus
+  register_nav_menus(array(
+    'primary_nav' => 'Primary Navigation',
+    'footer_nav' => 'Footer Navigation',
+  ));
 }
-endif;
+add_action('after_setup_theme', 'mc2_theme_setup');

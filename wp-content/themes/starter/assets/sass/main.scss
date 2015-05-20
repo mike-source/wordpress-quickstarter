@@ -1,59 +1,54 @@
-/*                                                                                                                                         
+/*
 
 The following CSS was written using SASS preprocessor, this file should not be
 edited directly, instead edit the files in /scss directory and compile.
 
-This CSS was developed inline with these CSS approaches (as closely as possible):
+This CSS was developed inline with these CSS approaches (where possible):
 
 * BEM CSS Methodology : http://bem.info/method/
 * CSS Guidelines by Harry Roberts : https://github.com/csswizardry/CSS-Guidelines
 
-Feel free to use these approaches, or don't. It's totally up to you.
-
 */
 
-/*------------------------------------*\
-    $TABLE OF CONTENTS 
-\*------------------------------------*/
+/*------ $TABLE OF CONTENTS  ----------*/
+/** - CONFIG/          **/
+/**** :.VARIABLES    **/
+/**** :.MIXINS       **/
+/**** :.NORMALIZE (normalize.css from html5 boilerplate) **/
+/**** :.RESET        **/
+/**                  **/
+/** - GRID (PocketGrid 1.1.0, (c)2013 Arnaud Leray) **/
+/** - CAROUSEL (OwlCarousel2 2.0.0-beta.2.4) (https://github.com/smashingboxes/OwlCarousel2) **/
 /**
- * CONFIG/
- * ..VARIABLES
- * ..MIXINS
- * ..NORMALIZE (normalize.css from html5 boilerplate)
- * ..RESET
- *
- * STYLES/
- * ..GENERAL
- *
- * PAGES/
- *
- */
+/** - CUSTOM STYLES **/
+/**
 /*------------------------------------*\
 
 \*------------------------------------*/
 
 
 
-/*------------------------------------*\
-    $NORMALIZE & RESET
+/*-- $NORMALIZE & RESET
 \*------------------------------------*/
+
 @import "config/variables";
 @import "config/mixins";
-@import "config/normalize";
 @import "config/reset";
 
-/*------------------------------------*\
-    $GRID SYSTEM
+/*-- $VENDOR CSS
 \*------------------------------------*/
 
 @import "grid";
+@import "carousel";
 
-/*------------------------------------*\
-    $THEME STYLES
+/*-- $THEME STYLES
 \*------------------------------------*/
 
+@import "general";
 @import "header";
 @import "footer";
-@import "general";
-@import "google-map";
-@import "carousel";
+@import "archive";
+@import "single";
+@import "home";
+@import "about";
+@import "contact";

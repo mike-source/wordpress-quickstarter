@@ -1,15 +1,31 @@
+// fonts:
+$default-font: Arial, Helvetica, sans-serif;
+$alt-font: Georgia, sans-serif;
 
-$purple: #572d41;
-$dark-purple: #231f20;
-$green: #d5d654;
-$dark-green: #2d5743;
-$red: #ed1b22;
-$dark-red: #c0151b;
-$yellow: #ece80d;
+// gutters:
+$gutter--vertical: 20px;
+$gutter--horizontal: 20px;
+
+// colours:
+$purple: #583c80;
+$pink: #f55096;
+$orange: #ff7f3f;
+$green: #009578;
+$turquoise: #00a5b5;
+$blue: #3e8ddd;
+$indigo: #9678d2;
+
+$purple-light: #ddd4e4;
+$pink-light: #ffdee8;
+$orange-light: #ffe5d6;
+$green-light: #c8eae1;
+$turquoise-light: #d8ecef;
+
+// greyscale colours:
 $white: #fff;
-$grey-light: #eee;
+$grey-light: #e6e6e6;
 $grey-light2: #ddd;
 $grey: #ccc;
 $grey-dark: #808080;
-$light-black: #231f20;
+$grey-dark2: #231f20;
 $black: #000;

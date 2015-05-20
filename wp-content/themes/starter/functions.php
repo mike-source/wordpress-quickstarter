@@ -56,18 +56,18 @@ if (GOOGLE_ANALYTICS_ID && (WP_ENV !== 'production' || !current_user_can('manage
 function mc2_scripts() {
 
     $assets = array(
-      'main-css'  => '/assets/css/main.css?' . filemtime( get_template_directory() . '/assets/css/main.css'),
-      'owl-css'   => '/assets/css/owl.carousel.css?' . filemtime( get_template_directory() . '/assets/css/owl.carousel.css'),
-      'owl-theme' => '/assets/css/owl.theme.css?' . filemtime( get_template_directory() . '/assets/css/owl.theme.css'),
-      'mc2-js'    => '/assets/js/main.js?' . filemtime( get_template_directory() . '/assets/js/main.js'),
-      'modernizr' => '/assets/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js',
+      'stardos'   => '/assets/fonts/stardos-stencil/stylesheet.css?' . filemtime(get_template_directory() . '/assets/fonts/stardos-stencil/stylesheet.css'),
+      'main-css'  => '/assets/css/main.css?' . filemtime(get_template_directory() . '/assets/css/main.css'),
+      'vendor-js' => '/assets/js/scripts.min.js?' . filemtime(get_template_directory() . '/assets/js/scripts.min.js'),
+      'mc2-js'    => '/assets/js/main.js?' . filemtime(get_template_directory() . '/assets/js/main.js'),
+      'mc2-js-min'    => '/assets/js/main.min.js?' . filemtime(get_template_directory() . '/assets/js/main.js'),
+      'modernizr' => '/assets/js/vendor/modernizr-2.8.3-respond-1.1.0.min.js',
       'jquery'    => '//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'
     );
 
   // Enqueue Style Sheets:
   wp_enqueue_style('font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css', false, null);
-  wp_enqueue_style('owl-carousel', get_template_directory_uri() . $assets['owl-css'], false, null);
-  wp_enqueue_style('owl-theme', get_template_directory_uri() . $assets['owl-theme'], false, null);
+  wp_enqueue_style('stardos', get_template_directory_uri() . $assets['stardos'], false, null);
   wp_enqueue_style('main', get_template_directory_uri() . $assets['main-css'], false, null);
 
   /**
@@ -88,7 +88,18 @@ function mc2_scripts() {
   // Enqueue Javascript:
   wp_enqueue_script('modernizr', get_template_directory_uri() . $assets['modernizr'], array(), null, false);
   wp_enqueue_script('jquery');
-  wp_enqueue_script('mc2_js', get_template_directory_uri() . $assets['mc2-js'], array(), null, true);
+  wp_enqueue_script('vendor_js', get_template_directory_uri() . $assets['vendor-js'], array(), null, true);
+
+  if (WP_ENV === 'development') {
+      wp_register_script('mc2_js', get_template_directory_uri() . $assets['mc2-js'], array(), null, true);
+      wp_localize_script('mc2_js', 'ajax_data', array('ajaxurl' => admin_url('admin-ajax.php'))); // hook in AJAX data for main.js
+      wp_enqueue_script('mc2_js');
+  } else {
+      wp_register_script('mc2_js', get_template_directory_uri() . $assets['mc2-js-min'], array(), null, true);
+      wp_localize_script('mc2_js', 'ajax_data', array('ajaxurl' => admin_url('admin-ajax.php'))); // hook in AJAX data for main.js
+      wp_enqueue_script('mc2_js');
+  }
+
 }
 add_action('wp_enqueue_scripts', 'mc2_scripts', 100);
 
@@ -110,13 +121,16 @@ function jquery_local_fallback($src, $handle = null) {
 add_action('wp_head', 'jquery_local_fallback');
 
 
+// Force Hide Admin Bar for all users
+add_filter('show_admin_bar', '__return_false');
+
 /**
  * Theme Setup
  */
 function mc2_theme_setup() {
   // Enable plugins to manage the document title
   // http://codex.wordpress.org/Function_Reference/add_theme_support#Title_Tag
-  add_theme_support('title-tag');
+  // add_theme_support('title-tag');
 
   // Add post thumbnails
   // http://codex.wordpress.org/Post_Thumbnails
@@ -139,3 +153,17 @@ function mc2_theme_setup() {
   ));
 }
 add_action('after_setup_theme', 'mc2_theme_setup');
+
+// Remove horrible emoji stuff from head tag
+remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+remove_action( 'wp_print_styles', 'print_emoji_styles' );
+
+// Page Slug Body Class
+function add_slug_body_class( $classes ) {
+    global $post;
+    if ( isset( $post ) ) {
+        $classes[] = $post->post_type . '-' . $post->post_name;
+    }
+        return $classes;
+    }
+add_filter( 'body_class', 'add_slug_body_class' );

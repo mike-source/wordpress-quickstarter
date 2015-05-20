@@ -4,8 +4,7 @@
         
         git clone https://github.com/mike-source/wordpress-starter.git .
         
-2. Navigate to /wordpress/ subdirectory in a terminal (or a Git GUI app) and checkout desired Wordpress branch (Wordpress is added as a git submodule, but needs to be checked out manually until git hook is made).
-
+2. Download a copy of wordpress and extract it to the /wordpress/ directory.
 
 2. Create databases for live, staging, development as required.
 

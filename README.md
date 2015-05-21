@@ -3,8 +3,16 @@
 1. Clone this repo directly into the live web directory (public_html, httpdocs, etc.) of your environment:
         
         git clone https://github.com/mike-source/wordpress-starter.git .
+
+    You most likely will want to remove the /.git/ directory and initiate a new git repository:
+
+        rm -rf .git
+        git init
         
 2. Download a copy of wordpress and extract it to the /wordpress/ directory.
+
+        wget http://wordpress.org/latest.tar.gz
+        tar -xzvf latest.tar.gz 
 
 2. Create databases for live, staging, development as required.
 

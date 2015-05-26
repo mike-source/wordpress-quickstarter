@@ -68,4 +68,5 @@
 
 7. Now would be a good time to make an initial git commit:
         
+        git add .
         git commit -m "Initial Commit"

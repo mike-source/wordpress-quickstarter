@@ -11,6 +11,7 @@ Author URI: http://thisismc2.com
   // Custom post types
 
   function create_post_type() {
+
     register_post_type( 'mc2-service',
       array(
         'labels' => array(
@@ -26,23 +27,26 @@ Author URI: http://thisismc2.com
         'menu_icon' => 'dashicons-exerpt-view'
       )
     );
-    register_post_type( 'mc2-testimonial',
-      array(
-        'labels' => array(
-          'name' => __( 'Testimonials' ),
-          'singular_name' => __( 'Testimonial' )
-        ),
-        'supports' => array('title','excerpt','editor','revisions','thumbnail'),
-        'rewrite' => array(
-          'slug' => 'testimonials'
-          ),
-        'public' => true,
-        'has_archive' => true,
-        'menu_icon' => 'dashicons-testimonial'
-      )
-    );
-  }
 
+  }
   add_action( 'init', 'create_post_type' );
+
+  // Customise wordpress admin menu
+
+  function remove_menus(){
+
+    //remove_menu_page( 'index.php' );                  //Dashboard
+    //remove_menu_page( 'edit.php' );                   //Posts
+    remove_menu_page( 'upload.php' );                 //Media
+    //emove_menu_page( 'edit.php?post_type=page' );    //Pages
+    remove_menu_page( 'edit-comments.php' );          //Comments
+    //remove_menu_page( 'themes.php' );                 //Appearance
+    //remove_menu_page( 'plugins.php' );                //Plugins
+    //remove_menu_page( 'users.php' );                  //Users
+    //remove_menu_page( 'tools.php' );                  //Tools
+    //remove_menu_page( 'options-general.php' );        //Settings
+
+  }
+  add_action( 'admin_menu', 'remove_menus' );
 
 ?>

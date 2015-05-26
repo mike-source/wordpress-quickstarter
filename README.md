@@ -66,4 +66,6 @@
 
 6. Rename theme folder and give theme a name in style.css.
 
-7. Make a page and set template to 'Home Page', then in Settings > Reading, set Front Page displays = static page, and set this page as front page. 
+7. Now would be a good time to make an initial git commit:
+        
+        git commit -m "Initial Commit"

@@ -56,7 +56,6 @@ if (GOOGLE_ANALYTICS_ID && (WP_ENV !== 'production' || !current_user_can('manage
 function mc2_scripts() {
 
     $assets = array(
-      'stardos'   => '/assets/fonts/stardos-stencil/stylesheet.css?' . filemtime(get_template_directory() . '/assets/fonts/stardos-stencil/stylesheet.css'),
       'main-css'  => '/assets/css/main.css?' . filemtime(get_template_directory() . '/assets/css/main.css'),
       'vendor-js' => '/assets/js/scripts.min.js?' . filemtime(get_template_directory() . '/assets/js/scripts.min.js'),
       'mc2-js'    => '/assets/js/main.js?' . filemtime(get_template_directory() . '/assets/js/main.js'),
@@ -67,7 +66,6 @@ function mc2_scripts() {
 
   // Enqueue Style Sheets:
   wp_enqueue_style('font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css', false, null);
-  wp_enqueue_style('stardos', get_template_directory_uri() . $assets['stardos'], false, null);
   wp_enqueue_style('main', get_template_directory_uri() . $assets['main-css'], false, null);
 
   /**
@@ -92,11 +90,11 @@ function mc2_scripts() {
 
   if (WP_ENV === 'development') {
       wp_register_script('mc2_js', get_template_directory_uri() . $assets['mc2-js'], array(), null, true);
-      wp_localize_script('mc2_js', 'ajax_data', array('ajaxurl' => admin_url('admin-ajax.php'))); // hook in AJAX data for main.js
+      // wp_localize_script('mc2_js', 'ajax_data', array('ajaxurl' => admin_url('admin-ajax.php'))); // hook in AJAX data for main.js
       wp_enqueue_script('mc2_js');
   } else {
       wp_register_script('mc2_js', get_template_directory_uri() . $assets['mc2-js-min'], array(), null, true);
-      wp_localize_script('mc2_js', 'ajax_data', array('ajaxurl' => admin_url('admin-ajax.php'))); // hook in AJAX data for main.js
+      // wp_localize_script('mc2_js', 'ajax_data', array('ajaxurl' => admin_url('admin-ajax.php'))); // hook in AJAX data for main.js
       wp_enqueue_script('mc2_js');
   }
 
@@ -154,11 +152,11 @@ function mc2_theme_setup() {
 }
 add_action('after_setup_theme', 'mc2_theme_setup');
 
-// Remove horrible emoji stuff from head tag
+// Remove horrible emoji stuff from head tag in 4.2
 remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
 remove_action( 'wp_print_styles', 'print_emoji_styles' );
 
-// Page Slug Body Class
+// Adds page Slug as a <body> Class
 function add_slug_body_class( $classes ) {
     global $post;
     if ( isset( $post ) ) {

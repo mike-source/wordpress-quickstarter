@@ -16,11 +16,6 @@ get_header(); ?>
     </div><!-- .entry-content -->
 </div><!-- #post-## -->
 
-<div class="navigation">
-    <div class="prev">Older stores</div>
-    <div class="next">Newer stories</div>
-</div><!-- #nav-below -->
-
 <?php endwhile; ?>
 
 <?php get_footer(); ?>

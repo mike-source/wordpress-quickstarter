@@ -21,13 +21,3 @@
     <!--[if lt IE 8]>
         <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-    <header class="page-header  block-group">
-        <nav class="page-header__nav  page-header__nav--desktop  block">
-            <ul class="nav  block  block-group">
-                <li class="block"><a href="/#about">About</a></li>
-                <li class="active  block"><a href="/#services">Services</a></li>
-                <li class="block"><a href="/#blog">Blog</a></li>
-                <li class="block"><a href="/#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header><!-- #header -->

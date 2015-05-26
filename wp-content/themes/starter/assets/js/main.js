@@ -52,7 +52,7 @@
              autoHeight: true
          });
 
-         $('.scroll-arrow').on('click', function(event) {
+         $('.scroll-arrow').on('click', function() {
              $("html, body").animate({ scrollTop: 800 }, "slow");
          });
 
@@ -65,27 +65,6 @@
     'home': {
       init: function() {
         // JavaScript to be fired on the home page
-
-        $('.events__tab-buttons .btn').on('click', function(event) {
-
-            $('.events-tabs').removeClass('active');
-
-            weekToShow = $(this).attr('id');
-            arr = weekToShow.split('-');
-            eventsToShow = '#events-' + arr[1];
-
-            $(eventsToShow).addClass('active')
-        });
-
-        $('.event .header').on('click', function(event) {
-            $(this).parent().siblings().removeClass('active');
-            $(this).parent().toggleClass('active');
-        });
-
-        $('.location-tab').on('click', function(event) {
-            $(this).siblings().removeClass('active');
-            $(this).toggleClass('active');
-        });
 
       }, // end home.init
       finalize: function() {

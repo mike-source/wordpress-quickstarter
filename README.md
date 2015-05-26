@@ -9,14 +9,26 @@
         rm -rf .git
         git init
         
-2. Download a copy of wordpress and extract it to the /wordpress/ directory.
+2. Download the latest copy (or any copy you wish) of wordpress and extract it to the /wordpress/ directory.
+	
+	Linux/Unix:
 
         wget http://wordpress.org/latest.tar.gz
         tar -xzvf latest.tar.gz 
+        
+	OSX:
+	
+        curl -O https://wordpress.org/latest.tar.gz
+        tar -xvzf latest.tar.gz
+        
+    You should probably remove the archive file too:
+    
+    	rm latest.tar.gz
+		
+		
+3. Create databases for live, staging, development as required.
 
-2. Create databases for live, staging, development as required.
-
-   From linux command line:
+   From a linux command line this is:
 
         mysql -u root -p
         
@@ -27,9 +39,9 @@
         > GRANT ALL PRIVILEGES ON dbname.* TO dbuser@localhost;
         > exit
 
-3. Edit wp-config.php adding the database details for the LIVE (production) environment, and generating the 'Authentication Unique Keys and Salts', as with a normal Wordpress install.  
+4. Edit wp-config.php adding the database details for the LIVE (production) environment, and generating the 'Authentication Unique Keys and Salts', as with a normal Wordpress install.  
 
-4. (Optional) Create a wp-config-local.php to override the database details locally.  
+5. (Optional) Create a wp-config-local.php to override the database details locally.  
 
     Copy and paste the following into a new file and save as 'wp-config-local.php':
 	

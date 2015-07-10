@@ -17,10 +17,10 @@
 // If 'wp-config-local.php' exists, use those settings
 if ( file_exists( dirname( __FILE__ ) . '/wp-config-local.php' ) ) {
   include( dirname( __FILE__ ) . '/wp-config-local.php' );
-  
+
 // Otherwise use the below settings (live server)
 } else {
- 
+
 // ** Server Settings: ** //
 
 /** The name of the database for WordPress */
@@ -43,10 +43,10 @@ define('DB_COLLATE', '');
 
 } // /else
 
-define('WP_SITEURL', 'http://' . $_SERVER['SERVER_NAME'] . '/wordpress');
-define('WP_HOME',    'http://' . $_SERVER['SERVER_NAME']);
+define('WP_SITEURL', 'http://' . $_SERVER['HTTP_HOST'] . '/wordpress');
+define('WP_HOME',    'http://' . $_SERVER['HTTP_HOST']);
 define('WP_CONTENT_DIR', $_SERVER['DOCUMENT_ROOT'] . '/wp-content');
-define('WP_CONTENT_URL', 'http://' . $_SERVER['SERVER_NAME'] . '/wp-content');
+define('WP_CONTENT_URL', 'http://' . $_SERVER['HTTP_HOST'] . '/wp-content');
 
 /**#@+
  * Authentication Unique Keys and Salts.

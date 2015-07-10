@@ -9,7 +9,7 @@
         rm -rf .git
         git init
 
-2. Download the latest copy (or any copy you wish) of wordpress and extract it to the /wordpress/ directory.
+2. Download the latest copy (or any copy you wish) of wordpress and extract it to the `/wordpress/` directory.
 
 	Linux/Unix:
 
@@ -39,7 +39,7 @@
         > GRANT ALL PRIVILEGES ON dbname.* TO dbuser@localhost;
         > exit
 
-4. Edit wp-config.php adding the database details for the LIVE (production) environment, and generating the 'Authentication Unique Keys and Salts', as with a normal Wordpress install.  
+4. Edit `wp-config.php` adding the database details for the LIVE (production) environment, and generating the 'Authentication Unique Keys and Salts', as with a normal Wordpress install.  
 
 5. (Optional) Create a wp-config-local.php to override the database details locally.  
 
@@ -60,7 +60,7 @@
         define('WP_DEBUG', true);
 
 
-    Update this file with your local database details, 'wp-config-local.php' can not be included in the repository as it would override the live wp-config.php if deployed, it is excluded in .gitignore so needs to be re-added for each install.
+    Update this file with your local database details, '`wp-config-local.php`' can not be included in the repository as it would override the live wp-config.php if deployed, it is excluded in .gitignore so needs to be re-added for each install.
 
 5. Navigate to the web root in a browser and run Wordpress setup.
 
@@ -76,7 +76,7 @@
 
 #SASS via Compass#
 
-There is nothing to stop you from simply editing the theme's main.css file (/wp-content/themes/assets/css/main.css), you could happily work this way and simply delete the /assets/sass/ directory and config.rb. Some people like to stick to what they know even though it's inferior. The main objection is due to time constraints, an argument more or less anyone who has made the switch (to preprocessing) will realise is flawed.
+There is nothing to stop you from simply editing the theme's main.css file (`/wp-content/themes/assets/css/main.css`), you could happily work this way and simply delete the `/assets/sass/` directory and config.rb. Some people like to stick to what they know even though it's inferior. The main objection is due to time constraints, an argument more or less anyone who has made the switch (to preprocessing) will realise is flawed.
 
 The much much much better way to work would be to use SASS. If you're in any doubt as to why you should a quick google on the advantages should convince you, e.g. read: http://alistapart.com/article/why-sass
 
@@ -88,13 +88,13 @@ Steps to set up:
 
 1. Make sure Compass is installed on your dev machine: http://compass-style.org/install/
 
-2. Navigate to /wp-content/themes/assets/ in a terminal.
+2. Navigate to `/wp-content/themes/assets/` in a terminal.
 
 3. Run compass:
 
         compass watch
 
-4. Edit a file in the /sass folder, compass will now watch for any changes to these files and recompile css/main.css whenever it detects a change. Compass will actually make a `.css` file in `/css` for every `.scss` file it finds in `/sass`, so sass/main.scss compiles to css/main.css. Compass will ignore files that begin with an underscore (files it refers to as 'partials'). If you open up sass/main.scss, you'll see it includes all of the partials. It should be self explanatory how this works.
+4. Edit a file in the /sass folder, compass will now watch for any changes to these files and recompile css/main.css whenever it detects a change. Compass will actually make a `.css` file in `/css` for every `.scss` file it finds in `/sass`, so `sass/main.scss` compiles to `css/main.css`. Compass will ignore files that begin with an underscore (files it refers to as 'partials'). If you open up `sass/main.scss`, you'll see it includes all of the partials. It should be self explanatory how this works.
 
 5. One of the first things you'll want to take advantage of is setting variables for fonts and colours in `/assets/sass/config/_variables.scss`.
 

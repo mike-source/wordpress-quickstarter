@@ -72,3 +72,32 @@
 
         git add .
         git commit -m "Initial Commit"
+
+
+#SASS via Compass#
+
+There is nothing to stop you from simply editing the theme's main.css file (/wp-content/themes/assets/css/main.css), you could happily work this way and simply delete the /assets/sass/ directory and config.rb. Some people like to stick to what they know even though it's inferior. The main objection is due to time constraints, an argument more or less anyone who has made the switch (to preprocessing) will realise is flawed.
+
+The much much much better way to work would be to use SASS. If you're in any doubt as to why you should a quick google on the advantages should convince you, e.g. read: http://alistapart.com/article/why-sass
+
+The time you spend learning Sass (10-20 minutes, you can just write css) vs. the time you'll save using Sass ...kind of makes it a no brainer.
+
+The main obstacle for most people will be set up, you need a way of compiling your .scss files into a nice concatenated .css file. There are various ways to do this, this project comes with a pre-configured Compass config (/assets/config.rb).
+
+Steps to set up:
+
+1. Make sure Compass is installed on your dev machine: http://compass-style.org/install/
+
+2. Navigate to /wp-content/themes/assets/ in a terminal.
+
+3. Run compass:
+
+        compass watch
+
+4. Edit a file in the /sass folder, compass will now watch for any changes to these files and recompile css/main.css whenever it detects a change. Compass will actually make a `.css` file in `/css` for every `.scss` file it finds in `/sass`, so sass/main.scss compiles to css/main.css. Compass will ignore files that begin with an underscore (files it refers to as 'partials'). If you open up sass/main.scss, you'll see it includes all of the partials. It should be self explanatory how this works.
+
+5. One of the first things you'll want to take advantage of is setting variables for fonts and colours in `/assets/sass/config/_variables.scss`.
+
+6. There is a pre-included set of css reset rules based on normalize.css in `/assets/sass/config/_reset.scss`.
+
+Its up to you to consider how necessary all of the above is on a per project basis, files can easily be removed, this should form a good basis

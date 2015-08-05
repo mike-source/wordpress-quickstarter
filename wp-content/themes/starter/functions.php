@@ -9,7 +9,8 @@ include_once 'functions/google-analytics.php';  // integrate google-analytics (j
 
 /**
  * Misc Theme functions
- * - Add your custom functions below here, or group large/sets of functions into a separate file and
+ *
+ * Add custom/misc functions below here, or group large/sets of functions into a separate file and
  * attach with an include as above.
  *
  */
@@ -21,7 +22,7 @@ add_filter('show_admin_bar', '__return_false');
 remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
 remove_action( 'wp_print_styles', 'print_emoji_styles' );
 
-// Adds page Slug as a <body> Class
+// Add page slug as a <body> Class
 function add_slug_body_class( $classes ) {
     global $post;
     if ( isset( $post ) ) {

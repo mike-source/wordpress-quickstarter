@@ -3,7 +3,7 @@
 /*
 Plugin Name: Must-Use Functions
 Description: Custom Post Types/Taxonomies and any other functions that should persist even if the theme changes.
-Author: MC2
+Author: Mike Smith
 Version: 1.0
 Author URI: http://thisismc2.com
 */

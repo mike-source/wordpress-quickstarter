@@ -12,6 +12,9 @@ javascripts_dir = "js"
 # output_style = :expanded or :nested or :compact or :compressed
 output_style = :expanded
 
+# Enable sourcemap for line numbers in browsers that support it (Firebug/Chrome Dev Tools etc.):
+sourcemap = true
+
 # To enable relative paths to assets via compass helper functions. Uncomment:
 # relative_assets = true
 

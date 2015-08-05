@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 
-not found
+<p>Error 404: page not found</p>
 
 
 <?php get_footer(); ?>

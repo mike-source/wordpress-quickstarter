@@ -76,13 +76,13 @@
 
 #SASS via Compass#
 
-There is nothing to stop you from simply editing the theme's main.css file (`/wp-content/themes/assets/css/main.css`), you could happily work this way and simply delete the `/assets/sass/` directory and config.rb. Some people like to stick to what they know even though it's inferior. The main objection is due to time constraints, an argument more or less anyone who has made the switch (to preprocessing) will realise is flawed.
+There is nothing to stop you from simply editing the theme's main.css file (`/wp-content/themes/assets/css/main.css`), you could happily work this way and simply delete the `/assets/sass/` directory and config.rb. Some people like to stick to what they know... (even though the switch takes minutes!)
 
-The much much much better way to work would be to use SASS. If you're in any doubt as to why you should a quick google on the advantages should convince you, e.g. read: http://alistapart.com/article/why-sass
+The much much much better way to work would be to use SASS (specifically SCSS). If you're in any doubt as to why you should, a quick google on the advantages should convince you, e.g. read: http://alistapart.com/article/why-sass
 
-The time you spend learning Sass (10-20 minutes, you can just write css) vs. the time you'll save using Sass ...kind of makes it a no brainer.
+The time you spend learning the basics of SASS (10-20 minutes) vs. the time you'll save using SASS makes it almost a no brainer.
 
-The main obstacle for most people will be set up, you need a way of compiling your .scss files into a nice concatenated .css file. There are various ways to do this, this project comes with a pre-configured Compass config (/assets/config.rb).
+The main obstacle for most people will be the set up, you need a way of compiling your .scss files into a nice concatenated .css file. There are various ways to do this, this project comes with a pre-configured Compass config (/assets/config.rb).
 
 Steps to set up:
 

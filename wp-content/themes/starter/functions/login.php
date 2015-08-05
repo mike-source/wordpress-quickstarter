@@ -40,19 +40,19 @@ class Login {
             }
             .login #nav a:hover,
             .login #backtoblog a:hover {
-                color: #dfdf00 !important;
+                color: #00a0d2 !important;
             }
             .wp-core-ui .button-primary,
             .wp-core-ui .button-primary:hover,
             .wp-core-ui .button-primary:focus {
-                color: #000;
-                background: #dfdf00;
+                color: #FFF;
+                background: #000;
                 border: 0;
                 box-shadow: none;
             }
             .wp-core-ui .button-primary:active {
                 color: #FFF;
-                background: #222;
+                background: #555;
                 border: 0;
                 box-shadow: none;
             }

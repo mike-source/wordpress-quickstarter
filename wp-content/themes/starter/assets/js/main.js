@@ -89,7 +89,7 @@
                 }
                 setTimeout(delayed, threshold || 100);
             };
-        };
+        }
 
       } // end post_type_archive.init
     },

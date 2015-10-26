@@ -25,6 +25,8 @@
 
     	rm latest.tar.gz
 
+     Note: The `/wordpress` directory can just take any version of wordpress, dumped into that folder. This is also excluded from the git repo, so it is very easy to swap out different versions of wordpress for testing.
+
 
 3. Create databases for live, staging, development as required.
 
@@ -41,23 +43,41 @@
 
 4. Edit `wp-config.php` adding the database details for the LIVE (production) environment, and generating the 'Authentication Unique Keys and Salts', as with a normal Wordpress install.  
 
-5. (Optional) Create a wp-config-local.php to override the database details locally.  
+5. (Optional) Create a wp-config-local.php to override the database details locally.
+	
+	** For developing in multiple databases/locations it is extremely useful to be able to override certain settings in wp-config.php without committing them to the repository. This is done using an if statement in wp-config.php: **
+	
+		// If 'wp-config-local.php' exists, use those settings
+		if ( file_exists( dirname( __FILE__ ) . '/wp-config-local.php' ) ) {
+			include( dirname( __FILE__ ) . '/wp-config-local.php' );
 
+		// Otherwise use the below settings (live server)
+		} else {
+
+     - `wp-config.php` - contains the above if statement, along with LIVE database details which act as a fallback if no override is found.
+     
+     - `wp-config-local.php` - contains the code below, which override settings for the local database, you can also alter paths to your HOME and CONTENT directories if your site isn't in the live web directory of your vhost.
+    
     Copy and paste the following into a new file and save as 'wp-config-local.php':
 
         <?php
-        // Local server settings
-
-        define('WP_ENV', 'development');
-
-        // Local Database
-        define('DB_NAME', 'dbname');
-        define('DB_USER', 'dbuser');
-        define('DB_PASSWORD', 'dbpass');
-        define('DB_HOST', 'localhost');
-
-        // Turn on debug for local environment
-        define('WP_DEBUG', true);
+		// Local server settings
+		
+		define('WP_ENV', 'development');
+		
+		// Local Database
+		define('DB_NAME', 'starter');
+		define('DB_USER', 'dbuser');
+		define('DB_PASSWORD', 'dbpass');
+		define('DB_HOST', 'localhost');
+		
+		// Turn on debug for local environment
+		define('WP_DEBUG', true);
+		
+		define('WP_SITEURL', 'http://' . $_SERVER['HTTP_HOST'] . '/wordpress');
+		define('WP_HOME',    'http://' . $_SERVER['HTTP_HOST']);
+		define('WP_CONTENT_DIR', $_SERVER['DOCUMENT_ROOT'] . '/wp-content');
+		define('WP_CONTENT_URL', 'http://' . $_SERVER['HTTP_HOST'] . '/wp-content');
 
 
     Update this file with your local database details, '`wp-config-local.php`' can not be included in the repository as it would override the live wp-config.php if deployed, it is excluded in .gitignore so needs to be re-added for each install.

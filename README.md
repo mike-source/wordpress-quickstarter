@@ -1,3 +1,17 @@
+The following instructions will provide you with:
+
+- A fresh Git repository
+- Blank MySQL Database
+- Fresh install of wordpress (with core files in their own subdirectory)
+- Blank theme
+- Set up to compile Sass via Compass
+- Easy system for changing config settings outside of the repo, via local config override (`wp-config-local.php`)
+
+You may wish to tailor this README to be specific to the site you are developing.
+
+
+
+
 #Setup#
 
 1. Clone this repo directly into the live web directory (public_html, httpdocs, etc.) of your environment:
